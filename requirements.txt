@@ -1,0 +1,9 @@
+jupyterlab
+nbclient
+pandas
+matplotlib
+numpy
+requests
+python-telegram-bot
+pyarrow
+seaborn
