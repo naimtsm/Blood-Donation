@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt  # Corrected typo 'requiremetns.txt'
+          pip install -r requirements.txt  
 
       - name: Jupyter Notebook Execution
         run: jupyter nbconvert --execute EDA.ipynb  # Corrected typo 'jupyter execute'
