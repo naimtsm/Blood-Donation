@@ -5,7 +5,7 @@ on:
   # Allow running workflow manually
   workflow_dispatch:
   schedule:
-   ## - cron: '*/5 * * * *' # Schedule to run every 5 minutes, testing first!
+    - cron: '*/5 * * * *' # Schedule to run every 5 minutes, testing first!
 
 # Workflow run
 jobs:
@@ -27,8 +27,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt  
+          pip install -r requirements.txt
 
       - name: Jupyter Notebook Execution
-        run: jupyter nbconvert --execute EDA.ipynb  # Corrected typo 'jupyter execute'
+        run: jupyter nbconvert --execute EDA.ipynb
         shell: bash
