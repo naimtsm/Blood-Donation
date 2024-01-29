@@ -2,35 +2,33 @@ name: Schedule Jupyter Notebook
 
 # To control workflow schedule time
 on: 
-  # Allow to run workflow manually
-  workflow_dispatch:   
+  # Allow running workflow manually
+  workflow_dispatch:
   schedule:
-    - cron: '0 */5 * ? * *'  # Schedule to run every 5minutes, testing first
-
+    - cron: '0 */5 * ? * *'  # Schedule to run every 5 minutes, testing first
 
 # Workflow run
 jobs:
-  # Contain single job called as 'run-notebook'
+  # Contain a single job called 'run-notebook'
   run-notebook:
-    # Type of runner use to run the job
+    # Type of runner to use to run the job
     runs-on: ubuntu-latest
 
-
-    # Steps represent task that will be executed
+    # Steps represent tasks that will be executed
     steps:
-      - id: repo
-       name: Repo
-       uses: action/checkout@v2
+      - name: Repo
+        uses: actions/checkout@v2
 
-      - id: python
-       name: Python Setup
-       uses: actions/setup-python@v2
-       with:
-         python-version: '3.9'
-         cache: 'pip'
-      - run: pip install -r requiremetns.txt ## Instal package and libraries needed
-      
-      - id: jupyter
-       name: Jupyter Notebook Execution
-       run: jupyter execute EDA.ipynb # Name of the jupyter notebbok to be run
-       shell: bash
+      - name: Python Setup
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Corrected typo 'requiremetns.txt'
+
+      - name: Jupyter Notebook Execution
+        run: jupyter nbconvert --execute EDA.ipynb  # Corrected typo 'jupyter execute'
+        shell: bash
