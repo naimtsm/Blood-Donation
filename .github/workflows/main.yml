@@ -1,0 +1,22 @@
+name: Schedule Jupyter Notebook
+
+# To control workflow schedule time
+on:  
+    schedule:
+      - cron: '0 */5 * ? * *'  # Schedule to run every 5minutes, testing first
+
+# Workflow run
+jobs:
+
+  build:
+  runs-on: ubuntu-latest
+
+  # Steps represent task that will be executed
+  steps:
+      - id: repo
+      name: Repo Checlout
+
+  
+   
+
+
