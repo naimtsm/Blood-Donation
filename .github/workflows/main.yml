@@ -40,5 +40,5 @@ jobs:
 
       - name: Save notebook HTML
         run: |
-          mv EDA_Github_Action.html $GITHUB_WORKSPACE/EDA_Github_Action.html
+          mv EDA_Github_Action_html_read.html $GITHUB_WORKSPACE/EDA_Github_Action.html
         shell: bash
