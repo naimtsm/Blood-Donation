@@ -33,12 +33,19 @@ jobs:
 
 ############################################################
 
-      - name: Jupyter Notebook Execution
-        run: |
-          jupyter nbconvert --to html --execute EDA_Github_Action.ipynb
-        shell: bash
+      # - name: Jupyter Notebook Execution
+      #   run: |
+      #     jupyter nbconvert --to html --execute EDA_Github_Action.ipynb
+      #   shell: bash
 
-      - name: Save notebook HTML
+      # - name: Save notebook HTML
+      #   run: |
+      #     mv EDA_Github_Action_html_read.html $GITHUB_WORKSPACE/EDA_Github_Action.html
+      #   shell: bash
+
+
+      - name: Print from test.py
         run: |
-          mv EDA_Github_Action_html_read.html $GITHUB_WORKSPACE/EDA_Github_Action.html
-        shell: bash
+           export INPUT_STORE=$(jupyter nbconvert --to html --execute EDA_Github_Action.ipynb)
+           echo "Access direct: "
+           echo $INPUT_STORE
