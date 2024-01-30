@@ -44,8 +44,13 @@ jobs:
       #   shell: bash
 
 
-      - name: Print from test.py
+      # - name: Print from test.py
+      #   run: |
+      #      export INPUT_STORE=$(jupyter nbconvert --to html --execute EDA_Github_Action.ipynb)
+      #      echo "Access direct: "
+      #      echo $INPUT_STORE
+
+
+      - name: Run Program
         run: |
-           export INPUT_STORE=$(jupyter nbconvert --to html --execute EDA_Github_Action.ipynb)
-           echo "Access direct: "
-           echo $INPUT_STORE
+          python3 EDA_Github_Action_2.0.py
