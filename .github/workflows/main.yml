@@ -30,6 +30,15 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+
+############################################################
+
       - name: Jupyter Notebook Execution
-        run: jupyter execute EDA_Github_Action.ipynb
+        run: |
+          jupyter nbconvert --to html --execute EDA_Github_Action.ipynb
+        shell: bash
+
+      - name: Save notebook HTML
+        run: |
+          mv EDA_Github_Action.html $GITHUB_WORKSPACE/EDA_Github_Action.html
         shell: bash
