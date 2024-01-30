@@ -10,8 +10,8 @@ on:
 
 # Workflow run
 jobs:
-  # Contain a single job called 'run-notebook'
-  run-notebook:
+  # Contain a single job called 'Run_EDA_Daily_Update'
+  Run-EDA_Daily_Update:
     # Type of runner to use to run the job
     runs-on: ubuntu-latest
 
@@ -29,27 +29,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-
-
-############################################################
-
-      # - name: Jupyter Notebook Execution
-      #   run: |
-      #     jupyter nbconvert --to html --execute EDA_Github_Action.ipynb
-      #   shell: bash
-
-      # - name: Save notebook HTML
-      #   run: |
-      #     mv EDA_Github_Action_html_read.html $GITHUB_WORKSPACE/EDA_Github_Action.html
-      #   shell: bash
-
-
-      # - name: Print from test.py
-      #   run: |
-      #      export INPUT_STORE=$(jupyter nbconvert --to html --execute EDA_Github_Action.ipynb)
-      #      echo "Access direct: "
-      #      echo $INPUT_STORE
-
 
       - name: Run Program
         run: |
