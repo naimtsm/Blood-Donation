@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Import libraries 
-# 
-
 # In[1]:
 
 
@@ -88,9 +85,6 @@ print(donate_by_state)
 
 # Chart to show Daily vs state
 
-# Set backend to Agg, to allow Matplotlib work in github actions(headless environment)
-plt.switch_backend('Agg')
-
 sns.set(style= "whitegrid")
 
 # Bar plot using seaborn
@@ -152,8 +146,6 @@ yearly_donations_state_trydf = yearly_donations_state_trydf.rename_axis('date').
 # Drop column name 'state'
 yearly_donations_state_trydf = yearly_donations_state_trydf.drop('state', axis=1) 
 
-# Set backend to Agg, to allow Matplotlib work in github actions(headless environment)
-plt.switch_backend('Agg')
 
 #########Yearly trend plot#####################
 sns.set(style= "whitegrid")
@@ -176,9 +168,6 @@ plt.show()
 plt.close()
 
 
-# Send the image to Telegram
-# with open(yearlytrend, 'rb') as image:
-#     bot.send_photo(chat_id=chat_id, photo=InputFile(image))
 with open(yearlytrendstate, 'rb') as image:
     bot.send_photo(chat_id=chat_id, photo=image)
 
@@ -192,9 +181,6 @@ os.remove(yearlytrend)
 
 
 # Plotting the blood donation trend
-
-# Set backend to Agg, to allow Matplotlib work in github actions(headless environment)
-plt.switch_backend('Agg')
 
 # Plot size
 plt.figure(figsize =(20, 10)) # Size of the plot
@@ -383,8 +369,6 @@ df_percentage.set_index('Year', inplace = True)
 
 # Heatmap
 
-# Set backend to Agg, to allow Matplotlib work in github actions(headless environment)
-plt.switch_backend('Agg')
 
 plt.figure(figsize=(10, 8)) # Plot size
 sns.heatmap(df_percentage, cmap='Greens', annot=True, fmt=".1f", linewidths=.1)
@@ -401,9 +385,6 @@ image_filename = 'heatmap.png'
 plt.savefig(image_filename, bbox_inches='tight')
 plt.close()
 
-# Send the image to Telegram
-# with open(image_filename, 'rb') as image:
-#     bot.send_photo(chat_id=chat_id, photo=InputFile(image))
 with open(image_filename, 'rb') as image:
     bot.send_photo(chat_id=chat_id, photo=image)
 
@@ -430,8 +411,6 @@ donor_df = table.to_pandas()
 donor_df['visit_date'] = pd.to_datetime(donor_df['visit_date'])
 
 donor_df.head(7)
-
-
 
 
 # In[24]:
@@ -485,10 +464,6 @@ plt.savefig(distribution_image, bbox_inches='tight')
 plt.show()
 plt.close()
 
-
-# Send the image to Telegram
-# with open(distribution_image, 'rb') as image:
-#     bot.send_photo(chat_id=chat_id, photo=InputFile(image))
 with open(distribution_image, 'rb') as image:
     bot.send_photo(chat_id=chat_id, photo=image)
 
