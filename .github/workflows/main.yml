@@ -6,7 +6,7 @@ on:
   # Allow running workflow manually
   workflow_dispatch:
   schedule:
-    ##- cron: '*/5 * * * *' # Schedule to run every 5 minutes, testing first!
+    - cron: '*/5 * * * *' # Schedule to run every 5 minutes, testing first!
 
 # Workflow run
 jobs:
@@ -18,10 +18,10 @@ jobs:
     # Steps represent tasks that will be executed
     steps:
       - name: Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 # Select an action
 
       - name: Python Setup
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v2 # Select an action
         with:
           python-version: '3.9'
           cache: 'pip'
@@ -31,5 +31,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Jupyter Notebook Execution
-        run: jupyter nbconvert --execute EDA.ipynb
+        run: jupyter execute EDA.ipynb
         shell: bash
