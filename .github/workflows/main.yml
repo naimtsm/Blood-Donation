@@ -1,4 +1,4 @@
-# Github action schedule name 'Schedule Jupyter Notebook'
+# Github action schedule name 'Schedule Blood Donation'
 name: Schedule Blood Donation
 
 # To control workflow schedule time
@@ -6,7 +6,7 @@ on:
   # Allow running workflow manually
   workflow_dispatch:
   schedule:
-    - cron: '20 15 * * *' # Schedule to run at 3:20pm UTC ~~ 11:20pm Malaysia , testing first!
+    - cron: '37 15 * * *' # Schedule to run at 3:20pm UTC ~~ 11:20pm Malaysia , testing first!
 
 # Workflow run
 jobs:
