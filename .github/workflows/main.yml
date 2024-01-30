@@ -6,7 +6,7 @@ on:
   # Allow running workflow manually
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *' # Schedule to run every 60 minutes, testing first!
+    - cron: '*/5 * * * *' # Schedule to run every 60 minutes, testing first!
 
 # Workflow run
 jobs:
