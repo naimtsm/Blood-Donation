@@ -120,6 +120,9 @@ bot = telebot.TeleBot(bot_token)
 with open(yearlytrendstate, 'rb') as image:
     bot.send_photo(chat_id=chat_id, photo=image)
 
+# Send a message along with the photo
+message_text = 'Blood Donation by each State!'
+bot.send_message(chat_id=chat_id, text=message_text)   
 
 # Remove the saved image file in local, to save storage
 os.remove(yearlytrendstate)
@@ -170,6 +173,11 @@ plt.close()
 
 with open(yearlytrendstate, 'rb') as image:
     bot.send_photo(chat_id=chat_id, photo=image)
+
+
+# Send a message along with the photo
+message_text = 'Blood Donation Trend in Malaysia(Year)!'
+bot.send_message(chat_id=chat_id, text=message_text)   
 
 # Remove the saved image file in local, to save storage
 os.remove(yearlytrend)
@@ -389,6 +397,10 @@ plt.close()
 with open(image_filename, 'rb') as image:
     bot.send_photo(chat_id=chat_id, photo=image)
 
+ # Send a message along with the photo
+message_text = 'Total Blood Donations in Malaysia by Age Range(%)!'
+bot.send_message(chat_id=chat_id, text=message_text)      
+
 # Remove the saved image file in local, to save storage
 os.remove(image_filename)
 
@@ -467,6 +479,10 @@ plt.close()
 
 with open(distribution_image, 'rb') as image:
     bot.send_photo(chat_id=chat_id, photo=image)
+
+ # Send a message along with the photo
+message_text = 'Distribution of day visits by donors!'
+bot.send_message(chat_id=chat_id, text=message_text)      
 
 # Remove the saved image file in local, to save storage
 os.remove(distribution_image)
