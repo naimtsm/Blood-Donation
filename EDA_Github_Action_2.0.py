@@ -111,7 +111,7 @@ plt.close()
 
 ##### Send Image to Telegram Bot######
 bot_token = '6789524159:AAHIbYINLbnswT2iciqWCIQbt75uZsKSTTg'
-chat_id = '-4112415710'  ##Group chat id which consist bot
+chat_id = '-1002025566302'    ##'-4112415710'  ##Group chat id which consist bot
 
 # Initialize the Telegram bot
 bot = telebot.TeleBot(bot_token)
@@ -206,11 +206,12 @@ plt.savefig(bloodtype, bbox_inches='tight')
 plt.show()
 plt.close()
 
-# Send the image to Telegram
-# with open(bloodtype, 'rb') as image:
-#     bot.send_photo(chat_id=chat_id, photo=InputFile(image))
 with open(bloodtype, 'rb') as image:
     bot.send_photo(chat_id=chat_id, photo=image)
+
+# Send a message along with the photo
+message_text = 'Yearly Trend for each of blood type!'
+bot.send_message(chat_id=chat_id, text=message_text)   
 
 # Remove the saved image file in local, to save storage
 os.remove(bloodtype)
