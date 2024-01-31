@@ -6,7 +6,7 @@ on:
   # Allow running workflow manually
   workflow_dispatch:
   schedule:
-    - cron: '32 00 * * *' # Schedule to run at 11:00pm UTC ~~ 07:00am Malaysia!!! The runtime might be delay for +- few minutes
+    - cron: '10 01 * * *' # Schedule to run at 1:10am UTC ~~ 09:10am Malaysia!!! The runtime might be delay for +- few minutes
 
 # Workflow run
 jobs:
