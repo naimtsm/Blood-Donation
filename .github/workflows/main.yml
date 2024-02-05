@@ -6,8 +6,9 @@ on:
   # Allow running workflow manually
   workflow_dispatch:
   schedule:
-    - cron: '45 22 * * *' # Schedule to run at 10:45pm UTC ~~ 06:45 am Malaysia!!! The runtime might be delay for +- few minutes
-
+   # - cron: '45 22 * * *' # Schedule to run at 10:45pm UTC ~~ 06:45 am Malaysia!!! The runtime might be delay for +- few minutes
+   #STOPPING THE JOB
+   
 # Workflow run
 jobs:
   # Contain a single job called 'Run_EDA_Daily_Update'
