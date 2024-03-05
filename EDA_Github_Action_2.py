@@ -100,8 +100,6 @@ plt.xticks(rotation = 45) # Angle of rotation for x-axis label
 for index, value in enumerate(donate_by_state['daily']):
     plt.text(index, value + 0.1, f'{value:.0f}', ha = 'center', va = 'bottom', fontsize = 10)
 
-#####
-print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
 # Save the as an image
 yearlytrendstate = 'Blood_Donations_Yearly_Trend_In_Malaysia.png'
